@@ -35,13 +35,13 @@ int main()
     // Set variable to user input
     cin >> sandwichQty;
     
-    // Get bread, peanut butter and jelly costs
+    // Get bread, peanut butter and jelly qtys
     breadQty = sandwichQty * 2;
     peanutButterQty = sandwichQty * numberOfGramsOfPeanutButterInOneSandwich;
     jellyQty = sandwichQty * numberOfGramsOfJellyInOneSandwich;
     
     // Get bread, peanut butter and jelly costs
-    // Takes cost by ounces converts to grams
+    // Takes qty and multiples cost by grams after conversion
     breadCost = breadQty  * loafOfBreadCost / numberOfSlicesInLoaf;
     peanutButterCost = peanutButterQty * (costOfPeanutButter / (numberOfOuncesInPeanutButterJar / 0.035274));
     jellyCost = jellyQty * (costOfJelly / (numberOfOuncesInJellyJar / 0.035274));
