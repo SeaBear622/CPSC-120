@@ -18,6 +18,7 @@ int main()
 	double breadCost;
 	double peanutButterCost;
 	double jellyCost;
+    double totalCost;
 
 	// Constants for cost calulations
 	const double loafOfBreadCost = 5;
@@ -34,20 +35,28 @@ int main()
 	// Set variable to user input
 	cin >> sandwichQty;
 
+    // Get bread, peanut butter and jelly costs
+    breadQty = sandwichQty * 2;
+    peanutButterQty = sandwichQty * numberOfGramsOfPeanutButterInOneSandwich;
+    jellyQty = sandwichQty * numberOfGramsOfJellyInOneSandwich;
+    
 	// Get bread, peanut butter and jelly costs
 	// Takes cost by ounces converts to grams
-	breadCost = sandwichQty * 2 * loafOfBreadCost / numberOfSlicesInLoaf;
-	peanutButterCost = costOfPeanutButter / (numberOfOuncesInPeanutButterJar / 0.035274) * numberOfGramsOfPeanutButterInOneSandwich * sandwichQty;
-	jellyCost = costOfJelly / (numberOfOuncesInJellyJar / 0.035274) * numberOfGramsOfJellyInOneSandwich * sandwichQty;
+	breadCost = breadQty  * loafOfBreadCost / numberOfSlicesInLoaf;
+	peanutButterCost = peanutButterQty * (costOfPeanutButter / (numberOfOuncesInPeanutButterJar / 0.035274));
+	jellyCost = jellyQty * (costOfJelly / (numberOfOuncesInJellyJar / 0.035274));
+    totalCost = breadCost + peanutButterCost + jellyCost;
 
 	// Display results
 	cout << endl;
 	cout << "In order to make " << sandwichQty << " PP&Js" << endl;
-	cout << "You will need " << sandwichQty * 2 << " slices of bread which will cost you $" << breadCost << endl;
-	cout << "You will need " << numberOfGramsOfPeanutButterInOneSandwich * sandwichQty << " grams of peanut butter which will cost you $" << peanutButterCost << endl;
-	cout << "You will need " << numberOfOuncesInJellyJar * sandwichQty << " grams of jelly which will cost you $" << jellyCost << endl;
-	cout << "You will need to spend $" << breadCost + peanutButterCost + jellyCost << " in total";
-	cout << endl;
+	cout << "-------------------------------------------------------------------------------" << endl;
+	cout << "You will need " << breadQty << " slices of bread which will cost you $" << breadCost << endl;
+	cout << "You will need " << peanutButterQty << " grams of peanut butter which will cost you $" << peanutButterCost << endl;
+	cout << "You will need " << jellyQty << " grams of jelly which will cost you $" << jellyCost << endl;
+	cout << "-------------------------------------------------------------------------------" << endl;
+	cout << "You will need to spend $" << totalCost << " in total" << endl;
+	cout << "-------------------------------------------------------------------------------" << endl;
 	cout << endl;
 
 	// Pause system to read results
