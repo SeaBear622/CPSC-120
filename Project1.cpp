@@ -1,8 +1,9 @@
 /* 
-Project 1, A recipe qty and cost program
+Project #1
+A Recipe Qty and Cost Program - PB&J Edition 1.02
 Created By: Brian Bui and David Lee
 Created On: 9/5/2015
-Last Updated: 9/8/2015
+Last Updated: 9/15/2015
 */
 
 #include <iostream>
@@ -36,13 +37,12 @@ int main()
     cout << "Welcome to another A recipe qty and cost program - PB&J Edition";
     cout << endl << endl;
     
-    /*
     // sandwich
     cout << "                   _.---._" << endl;
     cout << "                _.-~       ~-._" << endl;
     cout << "            _.-~               ~-._" << endl;
     cout << "        _.-~                       ~---._" << endl;
-    cout << "    _.-~                                 ~\" << endl;
+    cout << "    _.-~                                 ~/" << endl;
     cout << " .-~                                    _.;" << endl;
     cout << " :-._                               _.-~ ./" << endl;
     cout << " }-._~-._                   _..__.-~ _.-~)" << endl;
@@ -51,7 +51,7 @@ int main()
     cout << "         ~-. \`--...--~_.-~/~~" << endl;
     cout << "            \.`--...--~_.-~" << endl;
     cout << "              ~-..----~" << endl;
-    */
+    cout << endl << endl;
     
     // Ask user how many sandwichs
     cout << "How many sandwiches do you wish to make?: ";
@@ -73,17 +73,29 @@ int main()
     // Display results
     cout << endl;
     cout << "In order to make " << sandwichQty << " PP&Js" << endl;
-    cout << "===============================================================================" << endl;
-    cout << left << setw(20) << "Item" << left << setw(20) << "Qty" << left<< setw(20) << "Cost" << endl;
-    cout << "-------------------------------------------------------------------------------" << endl;
-    cout << left << setw(20) << "Bread" << left << setw(20) << breadQty << left << setw(20) << fixed << setprecision(2) << breadCost << endl;
-    cout << left << setw(20) << "Peanut Butter" << left << setw(20) << fixed << setprecision(0) << peanutButterQty << left << setw(20) << fixed << setprecision(2) << peanutButterCost << endl;
-    cout << left << setw(20) << "Jelly" << left << setw(20) << fixed << setprecision(0) << jellyQty << left << setw(20) << fixed << setprecision(2) << jellyCost << endl;
-    cout << "-------------------------------------------------------------------------------" << endl;
+    cout << "=============================================" << endl;
+    cout << left << setw(15) << "Item";
+    cout << right << setw(15) << "Qty";
+    cout << right << setw(15) << "Cost";
+    cout << endl;
+    cout << "---------------------------------------------" << endl;
+    cout << left << setw(15) << "Bread";
+    cout << right << setw(15) << breadQty;
+    cout << right << setw(15) << fixed << setprecision(2) << breadCost;
+    cout << endl;
+    cout << left << setw(15) << "Peanut Butter";
+    cout << right << setw(15) << fixed << setprecision(0) << peanutButterQty;
+    cout << right << setw(15) << fixed << setprecision(2) << peanutButterCost;
+    cout << endl;
+    cout << left << setw(15) << "Jelly";
+    cout << right << setw(15) << fixed << setprecision(0) << jellyQty;
+    cout << right << setw(15) << fixed << setprecision(2) << jellyCost;
+    cout << endl;
+    cout << "---------------------------------------------" << endl;
     cout << setprecision(2);
     cout << "You will need to spend $" << totalCost << " without tax" << endl;
     cout << "You will need to spend $" << totalCost * salesTax << " with tax" << endl;
-    cout << "===============================================================================" << endl;
+    cout << "=============================================" << endl;
     cout << endl;
     
     // Pause system to read results
