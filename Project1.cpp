@@ -6,21 +6,23 @@ Last Updated: 9/8/2015
 */
 
 #include <iostream>
+#include <iomanip>
 using namespace std;
 
 int main()
 {
     // Initialize Variables
     double sandwichQty;
-    double breadQty;
-    double peanutButterQty;
-    double jellyQty;
+    double breadQty; // in slices
+    double peanutButterQty; // in grams
+    double jellyQty; // in grams
     double breadCost;
     double peanutButterCost;
     double jellyCost;
     double totalCost;
     
     // Constants for cost calulations
+    const double salesTax = 1.08;
     const double loafOfBreadCost = 5;
     const int numberOfSlicesInLoaf = 18;
     const double costOfPeanutButter = 2.50;
@@ -30,8 +32,29 @@ int main()
     const int numberOfOuncesInJellyJar = 8;
     const int numberOfGramsOfJellyInOneSandwich = 11;
     
+    // Welcome Message
+    cout << "Welcome to another A recipe qty and cost program - PB&J Edition";
+    cout << endl << endl;
+    
+    /*
+    // sandwich
+    cout << "                   _.---._" << endl;
+    cout << "                _.-~       ~-._" << endl;
+    cout << "            _.-~               ~-._" << endl;
+    cout << "        _.-~                       ~---._" << endl;
+    cout << "    _.-~                                 ~\" << endl;
+    cout << " .-~                                    _.;" << endl;
+    cout << " :-._                               _.-~ ./" << endl;
+    cout << " }-._~-._                   _..__.-~ _.-~)" << endl;
+    cout << " `-._~-._~-._              / .__..--~_.-~" << endl;
+    cout << "     ~-._~-._\.        _.-~_/ _..--~~" << endl;
+    cout << "         ~-. \`--...--~_.-~/~~" << endl;
+    cout << "            \.`--...--~_.-~" << endl;
+    cout << "              ~-..----~" << endl;
+    */
+    
     // Ask user how many sandwichs
-    cout << "How many sandwiches do you wish to make?" << endl;
+    cout << "How many sandwiches do you wish to make?: ";
     // Set variable to user input
     cin >> sandwichQty;
     
@@ -50,13 +73,17 @@ int main()
     // Display results
     cout << endl;
     cout << "In order to make " << sandwichQty << " PP&Js" << endl;
+    cout << "===============================================================================" << endl;
+    cout << left << setw(20) << "Item" << left << setw(20) << "Qty" << left<< setw(20) << "Cost" << endl;
     cout << "-------------------------------------------------------------------------------" << endl;
-    cout << "You will need " << breadQty << " slices of bread which will cost you $" << breadCost << endl;
-    cout << "You will need " << peanutButterQty << " grams of peanut butter which will cost you $" << peanutButterCost << endl;
-    cout << "You will need " << jellyQty << " grams of jelly which will cost you $" << jellyCost << endl;
+    cout << left << setw(20) << "Bread" << left << setw(20) << breadQty << left << setw(20) << fixed << setprecision(2) << breadCost << endl;
+    cout << left << setw(20) << "Peanut Butter" << left << setw(20) << fixed << setprecision(0) << peanutButterQty << left << setw(20) << fixed << setprecision(2) << peanutButterCost << endl;
+    cout << left << setw(20) << "Jelly" << left << setw(20) << fixed << setprecision(0) << jellyQty << left << setw(20) << fixed << setprecision(2) << jellyCost << endl;
     cout << "-------------------------------------------------------------------------------" << endl;
-    cout << "You will need to spend $" << totalCost << " in total" << endl;
-    cout << "-------------------------------------------------------------------------------" << endl;
+    cout << setprecision(2);
+    cout << "You will need to spend $" << totalCost << " without tax" << endl;
+    cout << "You will need to spend $" << totalCost * salesTax << " with tax" << endl;
+    cout << "===============================================================================" << endl;
     cout << endl;
     
     // Pause system to read results
